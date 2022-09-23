@@ -3,20 +3,31 @@
 body{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+#header{
+    position: fixed;
+    top:0;
+    left:0;
+    border-bottom:1px dashed #60FF52;
+    padding:1rem;
+    background: #1b1b1b;
 }
 #container{
+    box-sizing: border-box;
     color: #60FF52;
     background: #1b1b1b;
     font-family: 'Source Code Pro', sans-serif;
-    height:100vh;
+    min-height:100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     justify-content: space-evenly;
     padding-left: 1rem;
 }
 div{
     width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -24,21 +35,35 @@ h1{
     font-size:2rem;
 }
 
-form{
+#form{
+    position:fixed;
+    bottom: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+    width: 80%;
+    background: #1b1b1b;
+    padding: 1rem;
+
+}
+#messages{
+    padding-bottom: 10rem; 
+    padding-top: 10rem;
+    width:80%;
 }
 
 #textInput{
-    width: 20rem;
+    width: 100%;
     height:3rem;
     border: none;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px dashed rgba(255,255,255,0.6);
     background: none;
     color: white;
     margin-top:2rem;
+    font-family: 'Source Code Pro', sans-serif;
+    
 }
 
 #textInput:active{
@@ -49,4 +74,8 @@ form{
 #textInput:hover{
     outline: none;
     
+}
+
+.user{
+    color:white;
 }
