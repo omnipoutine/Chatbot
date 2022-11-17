@@ -9,6 +9,8 @@ function getRandomTimeout() {
     return Math.random() * (1000 - 500) + 500;
   }
 
+
+
 //Event listener for chat input
 //Logs input sends to main function and clears input
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,6 +51,12 @@ const regexReplace = (text) => {
 const compare = (replyArray, triggerArray, text ) => {
     let replytext = "";
     let isValid = false;
+
+    //Search triggerArray for index with keyword
+    if(text.includes('keyword')){
+        return triggerArray
+    }
+    else{
     for(let i = 0; i< triggerArray.length; i++){
 
         let innerArray = triggerArray[i];
@@ -65,12 +73,13 @@ const compare = (replyArray, triggerArray, text ) => {
     if (isValid){
         return replytext;
     }
-    return 'I have not reached such intelligence levels to understand what you are saying. :('
-    
+    //Incase keyword cannot be found
+    return 'I have not reached such intelligence levels to understand what you are saying. :( Type keywords for a list of words I can understand.'
+}
         
     
 }
-
+//Function to update users chat bubble
 const updateuserChat = (text) => {
     const chatDiv = document.getElementById('messages');
     let userChat = document.createElement('div');
@@ -82,7 +91,7 @@ const updateuserChat = (text) => {
     
 
 }
-
+//Function to update bot's chat bubble
 const updatebotChat = ( reply) => {
     const chatDiv = document.getElementById('messages');
     let botChat = document.createElement('div');
